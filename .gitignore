@@ -1,0 +1,13 @@
+# Xmake cache
+.cache/
+.xmake/
+build/
+test*
+*.html
+*.ppu
+*.o
+
+# MacOS Cache
+.DS_Store
+
+

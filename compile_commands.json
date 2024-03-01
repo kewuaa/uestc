@@ -1,0 +1,11 @@
+[
+{
+  "directory": "/home/kewuaa/Projects/uestc",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-O3", "-I/home/kewuaa/.xmake/packages/e/eigen/3.4.0/c95d81810dbc45229e675130ada7d4c7/include", "-I/home/kewuaa/.xmake/packages/e/eigen/3.4.0/c95d81810dbc45229e675130ada7d4c7/include/eigen3", "-DNDEBUG", "-o", "build/.objs/verify/linux/x86_64/release/src/canny.cpp.o", "src/canny.cpp"],
+  "file": "src/canny.cpp"
+},
+{
+  "directory": "/home/kewuaa/Projects/uestc",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-O3", "-I/home/kewuaa/.xmake/packages/e/eigen/3.4.0/c95d81810dbc45229e675130ada7d4c7/include", "-I/home/kewuaa/.xmake/packages/e/eigen/3.4.0/c95d81810dbc45229e675130ada7d4c7/include/eigen3", "-DNDEBUG", "-o", "build/.objs/verify/linux/x86_64/release/src/verify.cpp.o", "src/verify.cpp"],
+  "file": "src/verify.cpp"
+}]
