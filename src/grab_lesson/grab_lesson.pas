@@ -39,10 +39,10 @@ begin
         client.additionalHeaders.AddPair('Accept', 'application/json, text/javascript, */*; q=0.01');
         client.additionalHeaders.AddPair('User-Agent', 'Mozilla/5.0 (X11; Linux x86_64; rv:123.0) Gecko/20100101 Firefox/123.0');
         Assert(
-        config.Contains('username')
-        and config.Contains('password')
-        and config.Contains('candidates'),
-        'make sure that "username", "password" and "candidates" fields in config.toml'
+            config.Contains('username')
+            and config.Contains('password')
+            and config.Contains('candidates'),
+            'make sure that "username", "password" and "candidates" fields in config.toml'
         );
         username := config['username'].ToString();
         password := config['password'].ToString();

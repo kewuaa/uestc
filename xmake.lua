@@ -1,25 +1,43 @@
 ---@diagnostic disable: undefined-global
-add_requires("eigen", {external = false})
+local fpcobj_dir = "$(buildir)/.fpcobjs/$(arch)-$(os)"
+local pc_flags = {
+}
+if is_mode("debug") then
+    pc_flags[#pc_flags+1] = "-gh"
+    pc_flags[#pc_flags+1] = "-gl"
+end
 
 add_rules("mode.debug", "mode.release")
+add_pcflags(unpack(pc_flags))
 
 target("verify")
     set_kind("shared")
-    add_packages("eigen")
-    add_files("src/*.cpp")
+    if is_plat("mingw") then
+        set_toolchains("zig")
+    end
+    add_includedirs("/usr/include/eigen3")
+    add_files("./src/verify/*.cpp")
 
 target("grab_lesson")
-    add_deps("verify")
     set_kind("binary")
-    if is_mode("debug") then
-        add_pcflags("-gl -gh")
+    add_deps("verify")
+    set_toolchains("fpc")
+    add_pcflags(
+        "-Fu./src/core",
+        "-Fl$(buildir)/$(plat)/$(arch)/$(mode)"
+    )
+    add_files("./src/grab_lesson/grab_lesson.pas")
+    if is_plat("mingw") then
+        add_pcflags("-Px86_64", "-Twin64")
     end
-    add_files("src/grab_lesson.pas")
 
-target("test")
-    set_kind("binary")
-    add_deps("verify")
-    add_files("src/test.pas")
+    on_load(function(target)
+        local unit_target_dir = path.join(fpcobj_dir, target:name())
+        if not os.exists(unit_target_dir) then
+            os.mkdir(unit_target_dir)
+        end
+        target:add("pcflags", "-FU" .. unit_target_dir)
+    end)
 
 --
 -- If you want to known more usage about xmake, please see https://xmake.io

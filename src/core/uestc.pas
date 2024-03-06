@@ -98,7 +98,11 @@ begin
     Result := arr;
 end;
 
+{$IfDef WINDOWS}
+{$LinkLib libverify}
+{$Else}
 {$LinkLib verify}
+{$EndIf}
 function calculate_move_length(
     fg_width: Int32;
     bg_width: Int32;
