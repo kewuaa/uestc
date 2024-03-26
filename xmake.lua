@@ -15,7 +15,6 @@ target("verify")
     if is_plat("mingw") then
         set_toolchains("zig")
     end
-    add_includedirs("/usr/include/eigen3")
     add_files("./src/verify/*.cpp")
 
 target("grab_lesson")

@@ -1,11 +1,11 @@
 [
 {
   "directory": "/home/kewuaa/Projects/uestc",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-O3", "-I/usr/include/eigen3", "-DNDEBUG", "-o", "build/.objs/verify/linux/x86_64/release/src/verify/canny.cpp.o", "src/verify/canny.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-O3", "-DNDEBUG", "-o", "build/.objs/verify/linux/x86_64/release/src/verify/canny.cpp.o", "src/verify/canny.cpp"],
   "file": "src/verify/canny.cpp"
 },
 {
   "directory": "/home/kewuaa/Projects/uestc",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-O3", "-I/usr/include/eigen3", "-DNDEBUG", "-o", "build/.objs/verify/linux/x86_64/release/src/verify/verify.cpp.o", "src/verify/verify.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-O3", "-DNDEBUG", "-o", "build/.objs/verify/linux/x86_64/release/src/verify/verify.cpp.o", "src/verify/verify.cpp"],
   "file": "src/verify/verify.cpp"
 }]

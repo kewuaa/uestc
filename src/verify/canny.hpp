@@ -1,4 +1,4 @@
-#include "Eigen/Core"
+#include <eigen3/Eigen/Core>
 using namespace Eigen;
 
 void special_filter(MatrixXd& mat, const MatrixXd& kernel);
